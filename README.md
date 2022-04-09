@@ -16,6 +16,7 @@ s_table_valueset(my_table, 3, 1, "23");
 s_table_valueset(my_table, 4, 2, "tester");
 
 const char *tb_string = s_table_string_get(my_table);
+
 printf("%s", tb_string);
 
 free(my_table);
