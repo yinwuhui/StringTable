@@ -136,7 +136,7 @@ char * s_table_create_0(char *table_name, int x, int y, int colwidth)
 }
 
 /*设置表的值,*/
-int s_table_valueset(char *table, int x, int y, char *value)
+int s_table_valueset(char *table, unsigned int x, unsigned int y, char *value)
 {
     int cp_len = 0; 
     char **tmp_p = NULL;
@@ -147,6 +147,10 @@ int s_table_valueset(char *table, int x, int y, char *value)
 
     s_t_matedate *md = (s_t_matedate *)table;
     tmp_p = s_table_get(md, y , x);
+
+    if(x >= md->table_x || y >= md->table_y){
+        return 0;
+    }
 
     if(strlen(value) > md->colwidth){
         return 0;

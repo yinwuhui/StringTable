@@ -81,7 +81,7 @@ int s_table_attribute_set();
  * 返回值：
  * return :  返回成功设置的个数
  */
-int s_table_valueset(char *table, int x, int y, char *value);
+int s_table_valueset(char *table, unsigned int x, unsigned int y, char *value);
 
 /* 函数功能，一次性设置一行连续多个值
  * 参数：
