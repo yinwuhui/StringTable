@@ -4,7 +4,6 @@
 int main()
 {
     char *my_table = s_table_create_0("table example", 5, 4, 16);
-
     /*依次填充第 0 行，从第 2 格开始*/
     s_table_valuesetxs(my_table, 0, 1, "name sex age work", ' ');
     s_table_valuesetxs(my_table, 1, 1, "xiaoming man 22 programmer", ' ');
