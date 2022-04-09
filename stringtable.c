@@ -159,14 +159,6 @@ int s_table_valueset(char *table, unsigned int x, unsigned int y, char *value)
     tmp_p = s_table_get(md, y , x);
     memset(*tmp_p, ' ', md->colwidth);
     memcpy(*tmp_p, value, strlen(value));
-
-    for(int i = 0; i <= md->table_y ; i++)
-    {
-        for(int j = 0; j <= md->table_x ; j++)
-        {
-            tmp_p = s_table_get(md, y , x);
-        }
-    }
     
     return 1;
 }
@@ -206,9 +198,9 @@ static int s_table_valuesetxs_ex(char *table, int x_y, int s, char *values, char
     int wide = 0;
 
     if(type){
-        wide = md->table_x;
-    }else{
         wide = md->table_y;
+    }else{
+        wide = md->table_x;
     }
 
     for ( ; s < wide ; s++)
