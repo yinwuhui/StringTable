@@ -1,29 +1,24 @@
 # StringTable
 创建字符串表格，支持增删查改，格式化输出。
 
-int main()
-{
-    char *my_table = s_table_create_0("table example", 5, 4, 16);
-    /*依次填充第 0 行，从第 2 格开始*/
-    s_table_valuesetxs(my_table, 0, 1, "name sex age work", ' ');
-    s_table_valuesetxs(my_table, 1, 1, "xiaoming man 22 programmer", ' ');
-    s_table_valuesetxs(my_table, 2, 1, "xiaohong woman 22 PM", ' ');
+char *my_table = s_table_create_0("table example", 5, 4, 16);
 
-    /*依次填充第 0 列，从第 2 格开始*/
-    s_table_valuesetys(my_table, 0, 1, "1 2 3 4 5 6", ' ');
+s_table_valuesetxs(my_table, 0, 1, "name sex age work", ' ');
 
-    /*填充表格x，y处的值*/
-    s_table_valueset(my_table, 3, 1, "23");
-    s_table_valueset(my_table, 4, 2, "tester");
+s_table_valuesetxs(my_table, 1, 1, "xiaoming man 22 programmer", ' ');
 
-    /*打印表格*/
-    const char *tb_string = s_table_string_get(my_table);
-    printf("%s", tb_string);
+s_table_valuesetxs(my_table, 2, 1, "xiaohong woman 22 PM", ' ');
 
-    free(my_table);
+s_table_valuesetys(my_table, 0, 1, "1 2 3 4 5 6", ' ');
 
-    return 0;
-}
+s_table_valueset(my_table, 3, 1, "23");
+
+s_table_valueset(my_table, 4, 2, "tester");
+
+const char *tb_string = s_table_string_get(my_table);
+printf("%s", tb_string);
+
+free(my_table);
 
 打印结果：
 
